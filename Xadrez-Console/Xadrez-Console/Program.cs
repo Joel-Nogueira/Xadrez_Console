@@ -1,5 +1,6 @@
 ﻿using System;
 using tabuleiro;
+using tabuleiro.Enums;
 
 namespace Xadrez_Console
 {
@@ -9,7 +10,11 @@ namespace Xadrez_Console
         {
             Posicao P = new Posicao(3, 4);
 
-            Console.WriteLine("Posição P: " + P);
+            Tabuleiro tab = new Tabuleiro(8, 8);
+
+            Cor cor = Cor.Branca;
+
+            Peca peca = new Peca(P, cor, tab);
         }
     }
 }
