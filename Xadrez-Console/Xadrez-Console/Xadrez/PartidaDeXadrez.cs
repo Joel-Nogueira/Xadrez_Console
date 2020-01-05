@@ -54,11 +54,11 @@ namespace Xadrez
             tabuleiro.ColocarPeca(new Rainha(tabuleiro, Cor.Preta), new PosicaoXadrez('d', 8).ToPosicao());
             tabuleiro.ColocarPeca(new Rei(tabuleiro, Cor.Preta), new PosicaoXadrez('e', 8).ToPosicao());
 
-            for (int i = 97; i <= 104; i++)
+            /*for (int i = 97; i <= 104; i++)
             {
                 tabuleiro.ColocarPeca(new Peao(tabuleiro, Cor.Branca), new PosicaoXadrez(Convert.ToChar(i), 2).ToPosicao());
                 tabuleiro.ColocarPeca(new Peao(tabuleiro, Cor.Preta), new PosicaoXadrez(Convert.ToChar(i), 7).ToPosicao());
-            }
+            }*/
         }
     }
 }
