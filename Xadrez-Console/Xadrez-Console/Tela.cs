@@ -1,4 +1,6 @@
-﻿using tabuleiro;
+﻿using System;
+using tabuleiro;
+using tabuleiro.Enums;
 
 namespace Xadrez_Console
 {
@@ -8,15 +10,34 @@ namespace Xadrez_Console
         {
             for (int i = 0; i < tabuleiro.Linhas; i ++)
             {
+                Console.Write((8 - i) + " ");
                 for (int j = 0; j < tabuleiro.Colunas; j++)
                 {
                     if (tabuleiro.PosicaoDaPeca(i, j) == null)
-                        System.Console.Write("- ");
+                        Console.Write("- ");
                     else
-                        System.Console.Write(tabuleiro.PosicaoDaPeca(i, j) + " ");
+                    {
+                        Tela.ImprimirPeca(tabuleiro.PosicaoDaPeca(i, j));
+                        Console.Write(" ");
+                    }
                 }
-                System.Console.WriteLine();
+                Console.WriteLine();
             }
+            Console.WriteLine("  a b c d e f g h");
+        }
+
+        public static void ImprimirPeca(Peca peca)
+        {
+            if (peca.Cor == Cor.Branca)
+                Console.Write(peca);
+            else
+            {
+                ConsoleColor aux = Console.ForegroundColor;
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.Write(peca);
+                Console.ForegroundColor = aux;
+            }
+                
         }
     }
 }
