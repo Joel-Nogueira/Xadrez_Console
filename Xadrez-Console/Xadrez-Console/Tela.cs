@@ -1,6 +1,7 @@
 ﻿using System;
 using tabuleiro;
 using tabuleiro.Enums;
+using Xadrez;
 
 namespace Xadrez_Console
 {
@@ -27,7 +28,7 @@ namespace Xadrez_Console
         }
 
         public static void ImprimirPeca(Peca peca)
-        {
+        { 
             if (peca.Cor == Cor.Branca)
                 Console.Write(peca);
             else
@@ -38,6 +39,14 @@ namespace Xadrez_Console
                 Console.ForegroundColor = aux;
             }
                 
+        }
+
+        public static PosicaoXadrez LerPosicaoXadrez()
+        {
+            string s = Console.ReadLine();
+            char coluna = s[0];
+            int linha = int.Parse(s[1] + "");
+            return new PosicaoXadrez(coluna, linha);
         }
     }
 }
