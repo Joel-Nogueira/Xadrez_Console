@@ -4,10 +4,10 @@ namespace Xadrez
 {
     class PosicaoXadrez
     {
-        public char Linha { get; set; }
+        public int Linha { get; set; }
         public char Coluna { get; set; }
 
-        public PosicaoXadrez(char coluna, char linha)
+        public PosicaoXadrez(char coluna, int linha)
         {
             Coluna = coluna;
             Linha = linha;
@@ -15,7 +15,7 @@ namespace Xadrez
 
         public Posicao ToPosicao()
         {
-            return new Posicao(49 - Linha, Coluna - 'a' + 7);
+            return new Posicao(8 - Linha, Coluna - 'a');
         }
 
         public override string ToString()
